@@ -5,7 +5,7 @@ double [] doubleArray = new double[1];
 int lees = 0;
 int more = 0;
 
-Console.WriteLine("Введите вещественные числа.");
+Console.WriteLine("Введите вещественные числа. Ввод дробной части производится через запятую.");
 
 for (int i = 0; i <= doubleArray.Length; i++)
 {
@@ -15,8 +15,8 @@ for (int i = 0; i <= doubleArray.Length; i++)
 
     if (j==0)
     {
-        Console.WriteLine("Вы ввели символ 0 , что означает конец ввода.");
-        Console.WriteLine("Вы ввели следующие значения");
+        Console.WriteLine("Вы ввели число 0 , что означает конец ввода.");
+        Console.WriteLine("Вы заполнили массив следующими значениями.");
 
         for (int z = 0; z< i; z++)
         {
