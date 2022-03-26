@@ -3,20 +3,20 @@
 
 Random random = new();
 int deletNumb = 0;
-List<int> listInt = new();
+List<double> listDouble = new();
 
 Console.WriteLine("Список заполнен следующими числами");
-for (int i = 0; i < 10; i++) { 
-    listInt.Add(random.Next(1,10));
-    Console.WriteLine(listInt[i]);
+for (int i = 0; i < 10; i++) {
+    listDouble.Add(random.Next());
+    Console.WriteLine(listDouble[i]);
 }
 
 Console.WriteLine("Удалены следующие числа, кратные 2.");
-for (int i = 0; i < listInt.Count; i++)
+for (int i = 0; i < listDouble.Count; i++)
 {
-    if (listInt[i] % 2 == 0)
+    if (listDouble[i] % 2 == 0)
     {
-        listInt.Remove(listInt[i]);
+        listDouble.Remove(listDouble[i]);
         i--;
         deletNumb++;
     }
@@ -24,14 +24,14 @@ for (int i = 0; i < listInt.Count; i++)
 
 Console.WriteLine("Было удалено " + deletNumb + " Числа");
 Console.WriteLine("Оставшиеся числа");
-foreach (var numb in listInt)
+foreach (var numb in listDouble)
 {
     Console.WriteLine(numb);
 }
 
-listInt.Sort();
+listDouble.Sort();
 Console.WriteLine("Сортированные значения массива по возрвстанию.");
-foreach (var numb in listInt)
+foreach (var numb in listDouble)
 {
     Console.WriteLine(numb);
 }
