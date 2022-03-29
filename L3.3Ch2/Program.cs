@@ -22,7 +22,7 @@ for (int i = 0; i < listStart.Count; i++)
     {
         if (listStart[i] == listStart[j])
         {
-            counter++;            
+            counter++;
         }
 
     }

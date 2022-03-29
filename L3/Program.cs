@@ -2,13 +2,15 @@
     оставляя только один символ в каждой последовательности подряд идущих одинаковых символов. */
 
 string enterString = ("ссылаться на кого-то.");
+char cha = ' ';
 
 for (int i = 0; i < enterString.Length; i++)
 {
     for (int j = 0; j < enterString.Length; j++)
     {
-        if (enterString[i] == enterString[j])
+        if (enterString[i] == cha)
         {
+
         }
     }
 }
