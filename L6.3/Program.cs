@@ -2,68 +2,40 @@
 строчках, даны произвольные названия городов. Для каждого города укажите, в какой стране он
 находится. */
 
-List<string> country = new () {"Россия", "Китай", "Индия", "Турция", "Украина"  };
-List<string> citiesRus = new() { "Краснодар", "Воронеж", "Пенза", "Ростов", "Тула" };
-List<string> citiesChi = new() { "Шанхай", "Пекин", "Харбин", "Чанчжоу", "Лиян" };
-List<string> citiesInd = new() { "Мумбаи", "Бангалор", "Дели", "Лакхнау", "Тхана" };
-List<string> citiesTur = new() { "Антальяв", "Битез", "Далян", "Стамбул", "Гечек" };
-List<string> citiesUkr = new() { "Киев", "Харьков", "Донецк", "Днепр", "Одесса" };
-int index=0;
+int index =0;
 
-Console.WriteLine("");
+var cituCountry = new Dictionary<string, string> 
+{ 
+    ["Краснодар"]  = "Россия" ,
+    ["Шанхай"] = "Китай",
+    ["Дели"] = "Индия",
+    ["Стамбул"] = "Турция",
+    ["Одесса"] = "Украина",
+};
 
-foreach (string city in citiesRus)
+List<string> cities = new() { "Краснодар" , "Шанхай" , "Дели" , "Стамбул" , "Одесса" };
+cities.Sort();
+
+foreach (var item in cituCountry)
+{
+    Console.WriteLine(item.Value);
+}
+
+Console.WriteLine("Выберите город");
+Console.WriteLine();
+
+foreach (var item in cities)
 {
     index++;
-    Console.WriteLine(index + " " + city);    
+    Console.WriteLine(index + " " + item);
 }
+Console.WriteLine("Введите номер города");
+int number = Convert.ToInt32(Console.ReadLine());
 
-foreach (string city in citiesChi)
+foreach (var item in cituCountry)
 {
-    index++;
-    Console.WriteLine(index + " " + city);
-}
-
-foreach (string city in citiesInd)
-{
-    index++;
-    Console.WriteLine(index + " " + city);
-}
-
-foreach (string city in citiesTur)
-{
-    index++;
-    Console.WriteLine(index + " " + city);
-}
-
-foreach (string city in citiesUkr)
-{
-    index++;
-    Console.WriteLine(index + " " + city);
-}
-
-Console.WriteLine("Введите номер города, после чего будет выведена страна, в которой он находится.");
-
-int numberCity = Convert.ToInt32(Console.ReadLine());
-
-if (numberCity-1 <= 4)
-{
-    Console.WriteLine(country[0]);
-}
-
-if (numberCity - 1 > 4 & numberCity - 1 <= 9)
-{
-    Console.WriteLine(country[1]);
-}
-if (numberCity - 1 > 9 & numberCity - 1 <= 14)
-{
-    Console.WriteLine(country[2]);
-}
-if (numberCity - 1 > 14 & numberCity - 1 <= 19)
-{
-    Console.WriteLine(country[3]);
-}
-if (numberCity - 1 > 19 & numberCity - 1 <= 24)
-{
-    Console.WriteLine(country[4]);
+    if (item.Key == cities[number - 1])
+    {
+        Console.WriteLine($"Город: {item.Key} находится в {item.Value}");
+    }
 }
