@@ -3,23 +3,32 @@
 находится. */
 
 int index =0;
+List<string> cities = new ();
 
-var cituCountry = new Dictionary<string, string> 
+var cituCountry = new Dictionary<string, List<string>> 
 { 
-    ["Краснодар"]  = "Россия" ,
-    ["Шанхай"] = "Китай",
-    ["Дели"] = "Индия",
-    ["Стамбул"] = "Турция",
-    ["Одесса"] = "Украина",
+    ["Россия"]  = new List<string> { "Краснодар", "Воронеж", "Пенза", "Ростов", "Тула" },
+    ["Китай"] = new List<string> { "Шанхай", "Пекин", "Харбин", "Чанчжоу", "Лиян" },
+    ["Индия"] = new List<string> { "Мумбаи", "Бангалор", "Дели", "Лакхнау", "Тхана" },
+    ["Турция"] = new List<string> { "Антальяв", "Битез", "Далян", "Стамбул", "Гечек" },
+    ["Украина"] = new List<string> { "Киев", "Харьков", "Донецк", "Днепр", "Одесса" },
 };
 
-List<string> cities = new() { "Краснодар" , "Шанхай" , "Дели" , "Стамбул" , "Одесса" };
-cities.Sort();
 Console.WriteLine("Список стран.");
 Console.WriteLine();
+
 foreach (var item in cituCountry)
 {
-    Console.WriteLine(item.Value);
+    Console.WriteLine(item.Key);
+}
+
+foreach (var item in cituCountry)
+{
+    for (int i = 0; i < item.Value.Count; i++)
+    {
+        cities.Add(item.Value[i]);
+    }
+    
 }
 Console.WriteLine();
 Console.WriteLine("Выберите город");
@@ -27,17 +36,24 @@ Console.WriteLine();
 
 foreach (var item in cities)
 {
-    index++;
-    Console.WriteLine(index + " " + item);
+
+        index++;
+        Console.WriteLine(index + " " + item);
 }
+
 Console.WriteLine();
 Console.WriteLine("Введите номер города");
 int number = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
+
 foreach (var item in cituCountry)
 {
-    if (item.Key == cities[number - 1])
+    for (int i = 0; i < item.Value.Count; i++)
     {
-        Console.WriteLine($"Город: {item.Key} находится в {item.Value}");
+        if (cities[number - 1] == item.Value[i])
+        {
+            Console.WriteLine($"Город: {item.Value[i]}  находится в {item.Key}");
+        }
     }
+        
 }
