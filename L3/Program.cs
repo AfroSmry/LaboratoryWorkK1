@@ -6,11 +6,8 @@ char cha = ' ';
 
 for (int i = 0; i < enterString.Length; i++)
 {
-    for (int j = 0; j < enterString.Length; j++)
+    if (enterString[i] == cha)
     {
-        if (enterString[i] == cha)
-        {
-
-        }
+        
     }
 }

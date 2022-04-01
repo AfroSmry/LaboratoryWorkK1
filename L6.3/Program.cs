@@ -27,8 +27,7 @@ foreach (var item in cituCountry)
     for (int i = 0; i < item.Value.Count; i++)
     {
         cities.Add(item.Value[i]);
-    }
-    
+    }    
 }
 Console.WriteLine();
 Console.WriteLine("Выберите город");
@@ -36,7 +35,6 @@ Console.WriteLine();
 
 foreach (var item in cities)
 {
-
         index++;
         Console.WriteLine(index + " " + item);
 }
@@ -45,7 +43,6 @@ Console.WriteLine();
 Console.WriteLine("Введите номер города");
 int number = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
-
 foreach (var item in cituCountry)
 {
     for (int i = 0; i < item.Value.Count; i++)
@@ -54,6 +51,5 @@ foreach (var item in cituCountry)
         {
             Console.WriteLine($"Город: {item.Value[i]}  находится в {item.Key}");
         }
-    }
-        
+    }        
 }
