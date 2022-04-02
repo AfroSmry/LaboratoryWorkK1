@@ -38,18 +38,19 @@ for (int i = 0; i < numberN; i++)
 Console.WriteLine(summ0);
 Console.WriteLine(summ1);
 
-if (summ0 < summ1)
+if (summ0 > summ1)
 {
     var minFirst = arrayFirst.Cast<int>().AsParallel().WithExecutionMode(ParallelExecutionMode.ForceParallelism);
     Console.WriteLine("Минимальное число первого столбца = " + minFirst.Min());
 }
+else
 
-if (summ0 > summ1)
+if (summ1 > summ0)
 {
-    var minSecond = arrayFirst.Cast<int>().AsParallel().WithExecutionMode(ParallelExecutionMode.ForceParallelism);
-    Console.WriteLine("Минимальное число первого столбца = " + minSecond.Min());
+    var minSecond = arraySecond.Cast<int>().AsParallel().WithExecutionMode(ParallelExecutionMode.ForceParallelism);
+    Console.WriteLine("Минимальное число второго столбца = " + minSecond.Min());
 }
-
+else
 if (summ0 == summ1)
 {
     var minFirst = arrayFirst.Cast<int>().AsParallel().WithExecutionMode(ParallelExecutionMode.ForceParallelism);
@@ -64,7 +65,7 @@ if (summ0 == summ1)
 
     if (firstResult > secondResult)
     {
-        Console.WriteLine("Минимальное число первого столбца = " + secondResult);
+        Console.WriteLine("Минимальное число второго столбца = " + secondResult);
     }
 
     if (firstResult == secondResult)
