@@ -1,6 +1,6 @@
 ﻿/* Дан вещественный массив x размера n(n=10). Удалить из него элементы, кратные двум (если
 такие имеются) и расположить элементы массива по возрастанию. */
-
+//Реализовать удаление индекса
 Random random = new();
 int deletNumb = 0;
 List<double> listDouble = new();
@@ -22,7 +22,7 @@ for (int i = 0; i < listDouble.Count; i++)
     }
 }
 
-Console.WriteLine("Было удалено " + deletNumb + " Числа");
+Console.WriteLine("Было удалено " + deletNumb + " Числа(ел)");
 Console.WriteLine("Оставшиеся числа");
 foreach (var numb in listDouble)
 {

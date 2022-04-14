@@ -5,7 +5,7 @@
 string path = @"D:\DotNET\laboratory work\LaboratoryWorkK1\L7.3\Ar.txt";
 string arifm = "2+2*2";
 string text;
-char[] chars = { '-', '+', '*' , '/' , ' '};
+char[] chars = { '-', '+', '*', '/', ' ' }; 
 List<int> dataInt = new();
 int result = 0;
 
@@ -25,4 +25,17 @@ var data = text.Split(chars, StringSplitOptions.None);
 for (int i = 0; i < data.Length; i++)
 {
     dataInt.Add(int.Parse(data[i]));
+}
+
+int Calc(int a, int b, char c)
+{
+    switch (c)
+    {
+        case '*': return a * b;
+        case '/': return a / b;
+        case '+': return a + b;
+        case '-': return a + b;
+
+        default: return 0;
+    }
 }

@@ -2,6 +2,10 @@
 строчках, даны произвольные названия городов. Для каждого города укажите, в какой стране он
 находится. */
 
+/* Альтернативное решение через ввод назвния города 
+ string.Equals("строка 1","строка 2", System.StringComparison.CurrentCultureIgnoreCase)
+*/
+
 int index =0;
 List<string> cities = new ();
 

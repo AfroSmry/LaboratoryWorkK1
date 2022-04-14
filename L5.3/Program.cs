@@ -14,25 +14,31 @@ int[,] arrayA = new int[numberN, numberM];
 int[] arrayFirst = new int[numberM];
 int[] arraySecond = new int[numberM];
 
-for (int i = 0; i < numberN; i++)
+AddNumbers(arrayA, arrayFirst, arraySecond, numberN, numberM, random);
+
+void AddNumbers(int[,] _arrayA, int[] _arrayFirst, int[] _arraySecond, int _numberN, int _numberM, Random _random)
 {
-    for (int j = 0; j < numberM; j++)
+
+    for (int i = 0; i < _numberN; i++)
     {
-        arrayA[i, j] = random.Next(1, 20);
-        
-        if (i<1)
+        for (int j = 0; j < _numberM; j++)
         {
-            arrayFirst[j] = arrayA[i, j];
-            summ0 += arrayFirst[j];
+            _arrayA[i, j] = _random.Next(1, 20);
+
+            if (i < 1)
+            {
+                _arrayFirst[j] = _arrayA[i, j];
+                summ0 += arrayFirst[j];
+            }
+            if (i > 0)
+            {
+                _arraySecond[j] = _arrayA[i, j];
+                summ1 += arraySecond[j];
+            }
+            Console.Write(_arrayA[i, j] + " ");
         }
-        if (i>0)
-        {
-            arraySecond[j] = arrayA[i, j];
-            summ1 += arraySecond[j];
-        }
-        Console.Write(arrayA[i, j] + " ");
+        Console.WriteLine();
     }
-    Console.WriteLine();
 }
 
 Console.WriteLine(summ0);

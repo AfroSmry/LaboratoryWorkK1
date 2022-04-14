@@ -44,7 +44,40 @@ for (int i = 0; i < listStart.Count; i++)
 }
 Console.WriteLine();
 Console.WriteLine("Сортированные повторяющиеся элементы.");
-listEnd.Sort();
+//listEnd.Sort(); ! Альтернативное решение
+
+CoctailSort(listEnd);
+// Шейкерная сортировка
+static void Swap(List<int> _listEnd, int i, int j)
+{
+    int temp = _listEnd[i];
+    _listEnd[i] = _listEnd[j];
+    _listEnd[j] = temp;
+}
+
+static void CoctailSort(List<int> _listEndt)
+{
+    int left = 0,
+         right = _listEndt.Count - 1;
+
+    while (left < right)
+    {
+        for (int i = left; i < right; i++)
+        {
+            if (_listEndt[i] > _listEndt[i + 1])
+                Swap(_listEndt, i, i + 1);
+        }
+        right--;
+
+        for (int i = right; i > left; i--)
+        {
+            if (_listEndt[i - 1] > _listEndt[i])
+                Swap(_listEndt, i - 1, i);
+        }
+        left++;
+    }
+}
+
 foreach (var item in listEnd)
 {
     Console.Write(item + " ");
